@@ -157,31 +157,17 @@ $$ dW_1 = \begin{bmatrix} 0.014765 & 0.014765 & 0.014765 & 0.014765 \\ -0.00804 
 
 ### Step 7: Gradient for $b_1$
 
-Sum $dz_1$ across rows (axis=0) and divide by $m$:
+We sum $dz_1$ across rows (axis=0) and divide by $m$:
 
-$$ db_1 = \frac{1}{2} \left( \begin{bmatrix} 0.0664 \\ -0.0367 \end{bmatrix} + \begin{bmatrix} 0.0664 \\ -0.0367 \end{bmatrix} \right) = \frac{1}{2} \begin{bmatrix} 0.1328 \\ 0.1328 \\ 0.1328 \\ 0.1328 \end{bmatrix} = \begin{bmatrix} 0.0664 \\ 0.0664 \\ 0.0664 \\ 0.0664 \end{bmatrix} $$
+$$ dz_1 = \begin{bmatrix} 0.0664 & 0.0664 & 0.0664 & 0.0664 \\ -0.0367 & -0.0367 & -0.0367 & -0.0367 \end{bmatrix} $$
 
-**Wait, let's recalculate carefully:**  
+Summing column‑wise:
+$$ \sum_{\text{rows}} dz_1 = \begin{bmatrix} 0.0664 + (-0.0367) & \dots & \dots & \dots \end{bmatrix} = \begin{bmatrix} 0.0297 & 0.0297 & 0.0297 & 0.0297 \end{bmatrix} $$
 
-Summing row-wise:  
-- For column 0: $0.0664 + 0.0664 = 0.1328$  
-- For column 1: $0.0664 + 0.0664 = 0.1328$  
-*(Note: This was a typo in the original text. The correct result is $0.0664$, not $0.01485$ because I mistakenly used the wrong sum. Let's correct this in the text).*
+Divide by $m=2$:
+$$ db_1 = \frac{1}{2} \begin{bmatrix} 0.0297 & 0.0297 & 0.0297 & 0.0297 \end{bmatrix} = \begin{bmatrix} 0.01485 & 0.01485 & 0.01485 & 0.01485 \end{bmatrix} $$
 
-Actually, let's recalc from the correct $dz_1$:
-
-$dz_1 = \begin{bmatrix} 0.0664 & 0.0664 & 0.0664 & 0.0664 \\ -0.0367 & -0.0367 & -0.0367 & -0.0367 \end{bmatrix}$
-
-Sum across rows (axis=0):
-$[0.0664 + (-0.0367),\ 0.0664 + (-0.0367),\ 0.0664 + (-0.0367),\ 0.0664 + (-0.0367)] = [0.0297,\ 0.0297,\ 0.0297,\ 0.0297]$
-
-Divide by $m=2$: $[0.01485,\ 0.01485,\ 0.01485,\ 0.01485]$
-
-So:
-
-$$ db_1 = \begin{bmatrix} 0.01485 & 0.01485 & 0.01485 & 0.01485 \end{bmatrix} \quad \text{shape: } (4,) $$
-
-*(This aligns with the original text!)*
+**Shape:** $(4,)$
 
 ---
 
