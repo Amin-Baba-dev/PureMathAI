@@ -177,18 +177,16 @@ We apply gradient descent with $\text{lr} = 0.1$:
 
 $$ \theta \leftarrow \theta - \text{lr} \cdot \nabla_\theta $$
 
-**Update $W_2$:**  
-Example first row:
+**Update $W_2$** (example first row):
 $$ \begin{bmatrix} 0.1 & 0.2 \end{bmatrix} \leftarrow \begin{bmatrix} 0.1 & 0.2 \end{bmatrix} - 0.1 \cdot \begin{bmatrix} -0.209 & 0.209 \end{bmatrix} = \begin{bmatrix} 0.1209 & 0.1791 \end{bmatrix} $$
 
-**Update $b_2$:**  
+**Update $b_2$**:
 $$ \begin{bmatrix} 0.1 & 0.2 \end{bmatrix} \leftarrow \begin{bmatrix} 0.1 & 0.2 \end{bmatrix} - 0.1 \cdot \begin{bmatrix} -0.1485 & 0.1485 \end{bmatrix} = \begin{bmatrix} 0.11485 & 0.18515 \end{bmatrix} $$
 
-**Update $W_1$:**  
-Example first row:
+**Update $W_1$** (example first row):
 $$ \begin{bmatrix} 0.1 & 0.2 & 0.3 & 0.4 \end{bmatrix} \leftarrow \begin{bmatrix} 0.1 & 0.2 & 0.3 & 0.4 \end{bmatrix} - 0.1 \cdot \begin{bmatrix} 0.014765 & 0.014765 & 0.014765 & 0.014765 \end{bmatrix} = \begin{bmatrix} 0.0985235 & 0.1985235 & 0.2985235 & 0.3985235 \end{bmatrix} $$
 
-**Update $b_1$:**  
+**Update $b_1$**:
 $$ \begin{bmatrix} 0.1 & 0.2 & 0.3 & 0.4 \end{bmatrix} \leftarrow \begin{bmatrix} 0.1 & 0.2 & 0.3 & 0.4 \end{bmatrix} - 0.1 \cdot \begin{bmatrix} 0.01485 & 0.01485 & 0.01485 & 0.01485 \end{bmatrix} = \begin{bmatrix} 0.098515 & 0.198515 & 0.298515 & 0.398515 \end{bmatrix} $$
 
 ---
